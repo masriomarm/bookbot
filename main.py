@@ -1,5 +1,6 @@
 import stats as st
 import report as fmt
+import sys
 
 
 def get_book_text(path_to_file):
@@ -17,7 +18,11 @@ def get_report(path_to_file):
 
 
 def main():
-    get_report("./books/frankenstein.txt")
+    if sys.argv.__len__() == 2:
+        get_report(sys.argv[1])
+    else:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
 
 
 main()
